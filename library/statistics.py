@@ -1,5 +1,5 @@
 # Task3
-
+import statistics
 #task3
 def value():
     max_value = max()
@@ -9,7 +9,7 @@ def value():
 
 #task4 and task5
 
-import statistics
+
 
 def caculate_formula(value):
 
