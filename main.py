@@ -5,6 +5,21 @@ import library.humidity
 import library.tvoc
 import library.co2
 import statistics
+TEMPERATURE_ID = 1 #ID number is assigned
+HUMIDITY_ID = 2
+PRESSURE_ID = 3
+ALTITUDE_ID = 4
+TVOC_ID = 5
+CO2_ID = 6
+class TimeSeriesData:
+    id = 0
+    value = 0
+    time = 0
+    def __init__(self,id,value,time): #constructor
+        self.id = id
+        self.value = value
+        self.time = time
+
 class Instrument:
     data = [] #since data is initialized as a list no need for constructor
     def add_datum(self,id,value,time):
@@ -33,6 +48,16 @@ class Instrument:
 
         min_value = min()
 
+    def print_list(self):
+        print("————————————————————————————————————————————")
+        print("Id " + "\t" + "Temp " + "\t" + "Pres" + "\t" + "Alt" + "\t" + "TVOC" + "\t" + "CO2")
+        print("————————————————————————————————————————————")
+        print(" ")
+        for datum in self.data:
+            print(str(datum.id) +"\t"+ str(datum.value) +"\t"+ str(datum.time))
+            print("\n ")
+            print("\n ")
+            print(" ")
 
 def get_command_input():
     print(" ---------------------------------------------")
@@ -96,10 +121,18 @@ def main():
 
         elif command == "2":
             os.system("clear")
-            print("TODO: List readings GUI page")
-            tool.print_list()
-            print("\n\n\n\n\n\n\n\n\n")
-
+            if len(tool.data) <=0:
+                print("Enter Atleast one Single Data")
+            else:
+                print(" \n")
+                print(" \n")
+                print("Indoor Air Quality Monitoring Command Console\n")
+                print(" ")
+                print("*********************************************\n")
+                print(" ")
+                print("LIST \n")
+                print(" ")
+                tool.print_list()
 
 
 
