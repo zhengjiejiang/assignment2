@@ -20,6 +20,8 @@ class TimeSeriesData:
         self.value = value
         self.time = time
 
+
+
 class Instrument:
     data = [] #since data is initialized as a list no need for constructor
     def add_datum(self,id,value,time):
@@ -44,9 +46,8 @@ class Instrument:
         return median
     def get_value_by_id(self, id):
         self.id = id
-        max_value = max()
-
-        min_value = min()
+        max_value = get_max_value()
+        min_value = get_min_value()
 
     def print_list(self):
         print("————————————————————————————————————————————")
@@ -121,46 +122,21 @@ def main():
 
         elif command == "2":
             os.system("clear")
-            if len(tool.data) <=0:
-                print("Enter Atleast one Single Data")
-            else:
-                print(" \n")
-                print(" \n")
-                print("Indoor Air Quality Monitoring Command Console\n")
-                print(" ")
-                print("*********************************************\n")
-                print(" ")
-                print("LIST \n")
-                print(" ")
-                tool.print_list()
+            print("ToDo: List readings GUI page")
+            tool.print_list()
+            print("\n\n\n\n\n\n\n\n\n")
 
 
 
 
 
-
-
-
-
-            exist = input("Please enter X to exist the list : ")
+            exist = input("Please enter X or x to exist the list : ")
             if exist == "x" or exist == "X":
                 os.system("clear")
-
-
-
-
-
-
-
-
-
-
-
-
-        elif command == "3":
-            pass
-
-
+            elif command == "3":
+                os.system('clear')
+                pass
+                # unable to do
 
         elif command == "4":
             main_loop_is_running = False
